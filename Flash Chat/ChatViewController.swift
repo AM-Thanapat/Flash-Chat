@@ -149,7 +149,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print(error!)
             }
             else{
-                print("Message saved succesful")
+                //print("Message saved succesful")
                 self.messageTextfield.isEnabled = true
                 self.sendButton.isEnabled = true
             }
