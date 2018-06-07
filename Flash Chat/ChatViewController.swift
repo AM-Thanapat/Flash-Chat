@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import ChameleonFramework
+import SVProgressHUD
 
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
@@ -34,7 +35,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //TODO: Set yourself as the delegate and datasource here:
         messageTableView.delegate = self
         messageTableView.dataSource = self
-        
         
         //TODO: Set yourself as the delegate of the text field here:
         messageTextfield.delegate = self
@@ -186,6 +186,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             navigationController?.popToRootViewController(animated: true)
         }
         catch {
+            SVProgressHUD.showError(withStatus: "error, there was a proble signing out")
             print("error, there was a proble signing out")
         }
         
